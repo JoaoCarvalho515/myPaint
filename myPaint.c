@@ -5,8 +5,6 @@
 #include <stdio.h>
 #include <math.h>
 
-
-
 /* Function prototypes. */
 
 void resetCoordinates(void);
@@ -29,8 +27,6 @@ void action_menu(int id);
 void color_menu(int id);
 
 void defineMenus(void);
-
-
 
 /* Defined types. */ 
 
@@ -56,12 +52,10 @@ GLfloat red = 1.0, green = 1.0, blue = 1.0;
 /* Deterines shape to draw, set by menu's. */
 int selected_shape = 0;
 
-
 /*  Used by all drawing functions. */
 
 int draw_count = 0;
 struct Coordinate draw_Coordinates[3];
-
 
 /* Resets the draw coordinates after each shape is drawn. */
 void resetCoordinates(void) {
@@ -81,7 +75,6 @@ void drawLine(int x, int y)
 	draw_count++;
 
 	glColor3f(red, green, blue);
-
 	if (draw_count == 2)
 	{
 		glBegin(GL_LINES);
@@ -101,7 +94,6 @@ void drawSquare(int x, int y)
 	draw_Coordinates[draw_count].x = x; 
 	draw_Coordinates[draw_count].y = windowHeight - y;
 	draw_count++;
-
 	if (draw_count == 2)
 	{
 		glRectf(draw_Coordinates[0].x, draw_Coordinates[0].y,
@@ -115,7 +107,6 @@ void drawSquare(int x, int y)
 void drawTriangle(int x, int y) 
 {
 	glColor3f(red, green, blue);
-
 	draw_Coordinates[draw_count].x = x; 
 	draw_Coordinates[draw_count].y = windowHeight - y;
 	draw_count++;
@@ -137,7 +128,6 @@ void drawTriangle(int x, int y)
 void drawCircle(int x, int y)
 {
 	glColor3f(red, green, blue);
-	
 	draw_Coordinates[draw_count].x = x;
 	draw_Coordinates[draw_count].y = windowHeight - y;
 	draw_count++;
@@ -171,22 +161,19 @@ void drawPoint(int x, int y)
 {
 	/* Use the currently selected color variables. */
 	glColor3f(red, green, blue);
-
 	x = x;
 	y = windowHeight - y;
     glPointSize(4.0);
-
-    glBegin(GL_POINTS);
-    	glVertex2f(x ,y);
-    glEnd();
-    glutPostRedisplay();
+	glBegin(GL_POINTS);
+    		glVertex2f(x ,y);
+	 glEnd();
+	glutPostRedisplay();
 }
 
 
 void mouse(int button, int state, int x, int y)
 {
 	if(button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
-
 		switch(selected_shape)
 		{
 		    case 1  :
@@ -212,9 +199,7 @@ void mouse(int button, int state, int x, int y)
 
 void display(void) 
 { 
-
 /* All display functions are called from mouse callback functions. */
-
 }
 
 /* Allows the application to be closed by keystroke. */
@@ -239,7 +224,6 @@ void init(void)
    glOrtho(0.0, windowWidth, 0.0, windowHeight,  -1.0, 1.0);
 
    clearScreen();
-   
 }
 
 void clearScreen(void)
