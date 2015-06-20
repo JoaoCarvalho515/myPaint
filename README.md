@@ -6,4 +6,4 @@ This is a simplt GLUT aplication to mimic the basic functionality provided by MS
 
 gcc myPaint.c -o myPaint -lglut -lGL -lGLU -lm
 
-./PaintApplication
+./myPaint
