@@ -1,6 +1,6 @@
 ### myPaint
 
-####This is a simplt GLUT aplication to mimic the basic functionality provided by MS paint.
+This is a simplt GLUT aplication to mimic the basic functionality provided by MS paint.
 
 ###Build Instructions
 
